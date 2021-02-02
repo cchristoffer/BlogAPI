@@ -36,6 +36,8 @@ Simple API for blog with user authentication and authorization
 
 # 2.Security
 The app is built so that anyone can view blogposts and comments, while you're required to be logged in to comment or edit/delete your own comments. To create a blog post admin priviledges are required.
+## JSON Web Tokens
+In progress...
 ## User Authentication
 For any CRUD operations a user will have to be authorized. This is done by the "protect" middleware which checks the JWT token of the request and verifies it with the JWT_SECRET in the confiv.env file (not included in repo). If no problems arises, the user is stored in the req.user object (no sensitive info stored).
 ## User Authorization
