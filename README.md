@@ -74,7 +74,7 @@ In progress...
 - Gets current user data (Authentication)
 #### DELETE: /api/v1/users/me
 - Deletes current user (Authentication)
-##### POST: /api/v1/users/forgotPassword
+#### POST: /api/v1/users/forgotPassword
 - Sends password reset url with token parameter to mailTrap (No Authentication)
 #### PATCH: /api/v1/users/:resetToken
 - If token is valid, allows user to enter new password (No Authentication)
