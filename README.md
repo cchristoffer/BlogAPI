@@ -65,9 +65,13 @@ Here we distinguish wether the errors are operational or unknown/programming. Fo
 ## Global Error Handling
 For all errors, above errorController is used to ensure obfuscation. For any errors not handled by above mentioned, there is a handler for unknown URLs as well as unhandled rejecitons which will shut the server down after the request/response cycle is finished.
 # 5.MongoDB with Mongoose
-In progress...
+Using noSQL object data model made validation of inputs and modelling references easy to work with and sustain. For this project there is a UserSchema, BlogPostSchema, ProjectsSchema and a commentsSchema. The Comment model virtually populates userinfo for comments whilst the BlogPost model populates comments and it's author. The BlogPost author also virtually populates number of words and time-to-read.
+
+There are also a number of document middlewares for usages within their specific model, such as checking passwords, when it was changed and creating reset tokens in the User Model.
 ## FactoryHandler
-In progress...
+Other than some specific User operations, all other CRUD operations are handled within a factory handler. Doing this enables DRY code by the factory functions taking a model as an input rather than a specific object, class or schema-specific parameters. If other data is required for the operations such as user.id or BlogPostId, a middleware is established to set this data in the req.body before saving the document.
+
+For authorization, authentication, registering etc. authController is used with custom handlers as theese operations are too specific to use in a factory handler. 
 # 6.Routes
 ## User Routes
 #### GET: /api/v1/users/me
