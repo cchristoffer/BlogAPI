@@ -70,59 +70,59 @@ In progress...
 In progress...
 # 6.Routes
 ## User Routes
-### GET: /api/v1/users/me
+#### GET: /api/v1/users/me
 - Gets current user data (Authentication)
-### DELETE: /api/v1/users/me
+#### DELETE: /api/v1/users/me
 - Deletes current user (Authentication)
-### POST: /api/v1/users/forgotPassword
+##### POST: /api/v1/users/forgotPassword
 - Sends password reset url with token parameter to mailTrap (No Authentication)
-### PATCH: /api/v1/users/:resetToken
+#### PATCH: /api/v1/users/:resetToken
 - If token is valid, allows user to enter new password (No Authentication)
-### PATCH: /api/v1/users/updateMyPassword 
+#### PATCH: /api/v1/users/updateMyPassword 
 - Allows user to update password, requires knowledge of current password. (Authentication)
-### PATCH: /api/v1/users/updateMe 
+#### PATCH: /api/v1/users/updateMe 
 - Allows user to update current data (Authentication)
 
-### GET: /api/v1/users
+#### GET: /api/v1/users
 - Gets all users (Authentication, role: ADMIN)
-### GET: /api/v1/users/:id
+#### GET: /api/v1/users/:id
 - Gets user by ID (Authentication, role: ADMIN)
-### PATCH: /api/v1/users/:id
+#### PATCH: /api/v1/users/:id
 - Allows admin to update user data (Authentication, role: ADMIN)
-### DELETE: /api/v1/users/:id
+#### DELETE: /api/v1/users/:id
 - Allows admin to delete user (Authentication, role: ADMIN)
 ## Projects Routes
-### GET: /api/v1/projects
+#### GET: /api/v1/projects
 - Gets all projects (No Authentication)
-### GET: /api/v1/projects/:id
+#### GET: /api/v1/projects/:id
 - Gets project by id (No Authentication)
-### POST: /api/v1/projects
+#### POST: /api/v1/projects
 - Create project (Authentication, role: ADMIN)
-### PATCH: /api/v1/projects/:id
+#### PATCH: /api/v1/projects/:id
 - Update project by id (Authentication, role: ADMIN)
-### DELETE: /api/v1/projects/:id
+#### DELETE: /api/v1/projects/:id
 - Deletes project by id (Authentication, role: ADMIN)
 
 ## Blog Routes
-### GET: /api/v1/blog
+#### GET: /api/v1/blog
 - Gets all blog posts (No Authentication)
-### GET: /api/v1/blog/:id
+#### GET: /api/v1/blog/:id
 - Gets blog posts by id, comments and user info is virtually populated from their models. (No Authentication)
-### POST: /api/v1/blog
+#### POST: /api/v1/blog
 - Create blog posts (Authentication, role: ADMIN)
-### PATCH: /api/v1/blog/:id
+#### PATCH: /api/v1/blog/:id
 - Update blog posts by id (Authentication, role: ADMIN)
-### DELETE: /api/v1/blog/:id
+#### DELETE: /api/v1/blog/:id
 - Deletes blog post by id (Authentication, role: ADMIN)
 
 ## Comment routes (Nested with blog routes)
-### GET: /api/v1/:blodPostId/:commentId
+#### GET: /api/v1/:blodPostId/:commentId
 - Gets comment and some user info by Id. (No Authentication)
-### POST: /api/v1/:blodPostId
+#### POST: /api/v1/:blodPostId
 - Create comment for blog by Id (Authentication)
-### PATCH: /api/v1/:blodPostId/:commentId
+#### PATCH: /api/v1/:blodPostId/:commentId
 - Update comment by id, requires you to be owner of comment (Authentication)
-### DELETE: /api/v1/:blodPostId/:commentId
+#### DELETE: /api/v1/:blodPostId/:commentId
 - Deletes blog post by id, requires you to be owner of comment (Authentication)
 
 # 7.Credits
