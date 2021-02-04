@@ -1,5 +1,5 @@
 # BlogAPI
-Simple API for blog and development portfolio with user authentication and authorization.
+Simple but robust API for blogging and portfolio with user authentication and authorization. Done with focus on error handling and security.
 
 
 ## Table of contents
